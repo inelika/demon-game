@@ -14,7 +14,7 @@ let loadedSprites = {};
 let lastTime = 0;
 let score = 0;
 let highScore = localStorage.getItem("highScore") || 0;
-let gameOver = false; // Добавляем флаг окончания игры
+let gameOver = false; 
 
 fetch('assets.json')
   .then(response => response.json())
@@ -75,7 +75,7 @@ function startGame() {
   score = 0;
   bgX1 = 0;
   bgX2 = canvas.width;
-  gameOver = false; // Сбрасываем флаг при старте игры
+  gameOver = false; 
 
   if (spawnInterval) clearInterval(spawnInterval);
   spawnInterval = setInterval(spawnEnemy, 2000);
@@ -94,7 +94,7 @@ function getGameSpeed(diff) {
 }
 
 function spawnEnemy() {
-  if (gameOver) return; // Не спавним врагов если игра окончена
+  if (gameOver) return; 
   
   const types = ['skeleton', 'ripper', 'stgom'];
 
@@ -111,12 +111,12 @@ function spawnEnemy() {
 }
 
 function gameLoop(timestamp) {
-  if (!gameInterval || gameOver) return; // Не обновляем игру если она окончена
+  if (!gameInterval || gameOver) return; 
 
   const deltaTime = timestamp - lastTime;
   lastTime = timestamp;
 
-  // Обновляем фон только если игра не окончена
+  
   if (!gameOver) {
     updateBackground();
   }
@@ -152,7 +152,7 @@ function gameLoop(timestamp) {
 
     if (!gameOver && !enemy.isDead && demon.state !== 'dead' && checkCollision(demon, enemy, 10)) {
       demon.die();
-      endGame(); // Вызываем endGame при смерти демона
+      endGame(); 
     }
   });
 
@@ -192,7 +192,7 @@ function checkCollision(obj1, obj2, offset = 0) {
 }
 
 function endGame() {
-  gameOver = true; // Устанавливаем флаг окончания игры
+  gameOver = true; 
   gameInterval = false;
   clearInterval(spawnInterval);
 
@@ -212,7 +212,7 @@ function endGame() {
   gameOverMessage.style.display = "block";
   startBtn.disabled = false;
 
-  // Добавляем обработчик для кнопки "Начать заново" внутри сообщения
+ 
   document.getElementById('restartBtn').addEventListener('click', () => {
     startGame();
     startBtn.disabled = true;
@@ -231,7 +231,7 @@ restartBtn.addEventListener("click", () => {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (!gameInterval || gameOver) return; // Не обрабатываем ввод если игра окончена
+  if (!gameInterval || gameOver) return; 
   if (demon.state === 'dead') return;
 
   switch (e.key.toLowerCase()) {
