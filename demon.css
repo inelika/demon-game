@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("https://sotni.ru/wp-content/uploads/2023/08/multiashnyi-ad-3.webp");
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: #000000cb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#game-container {
+  position: relative;
+  width: 800px;
+  height: 400px;
+}
+
+canvas {
+  background: #aa0000;
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 20px #ff000044;
+  display: block;
+}
+
+
+#gameUI {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+#controls {
+  display: flex;
+  gap: 10px;
+}
+
+#score-container {
+  display: flex;
+  gap: 20px;
+  color: white;
+  font-size: 18px;
+  text-shadow: 0 0 5px #000;
+}
+
+
+button, select {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff3333;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+select {
+  background-color: #333;
+}
+
+#gameOverContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  z-index: 100;
+  display: none;
+  width: 80%;
+  max-width: 400px;
+}
+
+#gameOverMessage {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #846666;
+  text-shadow: 0 0 10px #000;
+}
+
+#finalScore {
+  font-weight: bold;
+  color: #fff;
+}

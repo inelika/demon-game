@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Demon Game</title>
+  <link rel="stylesheet" href="demon.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+    
+
+    <div id="gameUI">
+      <div id="controls">
+        <button id="startBtn">Старт</button>
+        <select id="difficulty">
+          <option value="easy">Лёгкий</option>
+          <option value="medium">Средний</option>
+          <option value="hard">Сложный</option>
+        </select>
+      </div>
+      
+     
+
+      <div id="gameOverContainer">
+        <div id="gameOverMessage">Игра окончена!</div>
+        <button id="restartBtn">Начать заново</button>
+      </div>
+      
+  </div>
+
+  <script type="module" src="js/game.js"></script>
+  <script type="module" src="js/gamecontrol.js"></script>
+  <script type="module" src="js/caracter.js"></script>
+  <script type="module" src="js/demon.js"></script>
+  <script type="module" src="js/skeleton.js"></script>
+  <script type="module" src="js/stgom.js"></script>  
+  <script type="module" src="js/ghost.js"></script>
+  <script type="module" src="js/ripper.js"></script>
+ 
+</body>
+</html>
